@@ -9,5 +9,7 @@ httpcore==0.9.1
 httpx==0.13.3
 hyperframe==5.2.0
 idna==2.10
+requests==2.25.1
 rfc3986==1.4.0
 sniffio==1.2.0
+urllib3==1.26.3
