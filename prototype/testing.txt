@@ -1,12 +1,21 @@
 1. python3 preprocess.py "I wonder if they will win tomorrow" "I wonder" "I am keen to know"
 
-Ouput:
+*** Pre-processing: I wonder -> I am keen to know ***
+
+Google Translate
+
 Original Input: I wonder if they will win tomorrow
 Original Translation: मुझे आश्चर्य है कि अगर वे कल जीतेंगे
-
-Pre-processing: I wonder -> I am keen to know
 
 Pre-processed input: I am keen to know if they will win tomorrow
 Final Translation: मैं यह जानने के लिए उत्सुक हूं कि क्या वे कल जीतेंगे
 
-2. 
+*****
+
+Swayam Translate
+
+Original Input: I wonder if they will win tomorrow
+Original Translation: मुझे आश्चर्य होता है कि वे कल जीतेंगे तो
+
+Pre-processed input: I am keen to know if they will win tomorrow
+Final Translation: मुझे जानने की उत्सुकता है कि वे कल जीतेंगे तो
