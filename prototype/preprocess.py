@@ -1,76 +1,119 @@
-import googletrans
+import spacy
 import sys
-import time
-import requests
-import json
-from googletrans import Translator
+from queue import Queue
 
-if(len(sys.argv) < 4):
-	print("Not enough arguments.")
-	sys.exit()
+#Comparison with multiple options
+def check(x, y):
+	if "|" not in x:
+		return (x == y)
+	else:
+		x_parts = x.split("|")
+		for i in x_parts:
+			if(i == y):
+				return True
 
-source_input = sys.argv[1]
-replace_source = sys.argv[2]
-replace_target = sys.argv[3]
+		return False
 
-print("*** Pre-processing: " + replace_source + " -> " + replace_target + " ***\n")
+#Reading rule set
+rule_file = open("rule-set.ppr")
+rule_lines = rule_file.readlines()
 
-# GOOGLE TRANSLATE API
+patterns_and_replacements = []
 
-translator = Translator()
-source_language = 'en'
-destination_language = 'hi'
+for line in rule_lines:
+	line = line.strip()
 
-print("Google Translate\n")
+	if "->" not in line:
+		continue
 
-print("Original Input: " + source_input)
-result_original = translator.translate(source_input, src=source_language, dest=destination_language)
-print("Original Translation: " + result_original.text)
+	rule = line.strip()
+	rule = rule.split("->")
 
-time.sleep(2.5)
-preprocessed_input = source_input.replace(replace_source, replace_target)
-print("\nPre-processed input: " + preprocessed_input)
+	pattern_tokens = rule[0].strip().split(" ")
 
-time.sleep(2.5)
+	# preparing pattern for detection
+	detection_pattern = []
+	for i in pattern_tokens:
+		if(i[0] == "[" and i[-1] == "]"):
+			detection_pattern.append((i[1:-1],1)) #type 1: POS tag
+		else:
+			detection_pattern.append((i,0)) #type 0: String
 
-result_final = translator.translate(preprocessed_input, src=source_language, dest=destination_language)
-print("Final Translation: " + result_final.text)
+	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
-# SWAYAM API
-print("\n*****\n\nSwayam Translate\n")
+nlp = spacy.load("en_core_web_sm")
+text = sys.argv[1]
 
-print("Original Input: " + source_input)
+for detection_pattern, replacement_pattern in patterns_and_replacements:
+	doc = nlp(text)
+	arguments = {}
 
-headers_token = {
-    'Authorization': 'Basic Rkhxazg5MG9Edko2dFFXYWIzbldFOVhwNEE0YTpXSjVmTVloV2JUWjF1RzloVzRrYnA1OEptZllh',
-}
+	# detection in source sentence
+	detection_flag = False
+	detection_index = 0
 
-data_token = {
-  'grant_type': 'client_credentials'
-}
+	input_buffer = Queue(maxsize = 0)
 
-response = requests.post('https://apicallhttps.iiithcanvas.com/token', headers=headers_token, data=data_token)
+	output_sentence = []
 
-current_token = json.loads(response.text)["access_token"]
+	for token in doc:
+		input_buffer.put(str(token))
 
-headers = {
-    'accept': '*/*',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + current_token,
-}
+		pair_to_check = detection_pattern[detection_index]
 
-data = '{"text":"' + source_input + '","source_language":"eng","target_language":"hin"}'
+		#Matching one word from the pattern (index -> detection index)
+		if(pair_to_check[1] == 0): #CHECK STRING
+			if(check(pair_to_check[0], str(token))):
+				detection_index += 1
+			else:
+				detection_index = 0
+				while(not input_buffer.empty()):
+					output_sentence.append(input_buffer.get())
 
-response = requests.post('https://apicallhttps.iiithcanvas.com/apiMt/v.1.0.0/mt_linker', headers=headers, data=data)
-response_text_original = json.loads(response.text)
+				continue
 
-print("Original Translation: " + response_text_original["data"])
+		elif(pair_to_check[1] == 1): #CHECK POS TAG
+			temp_arg = ""
+			pos_to_check = ""
 
-print("\nPre-processed input: " + preprocessed_input)
+			if(pair_to_check[0][-2] == "@"): #argument number mentioned
+				temp_arg = pair_to_check[0][-1]
+				pos_to_check = pair_to_check[0][:-2]
+			else:
+				pos_to_check = pair_to_check[0]
 
-data = '{"text":"' + preprocessed_input + '","source_language":"eng","target_language":"hin"}'
+			if(check(pos_to_check, str(token.tag_))):
+				detection_index += 1
+				arguments[temp_arg] = str(token)
+			else:
+				detection_flag = 0
+				while(not input_buffer.empty()):
+					output_sentence.append(input_buffer.get())
 
-response = requests.post('https://apicallhttps.iiithcanvas.com/apiMt/v.1.0.0/mt_linker', headers=headers, data=data)
-response_text_final = json.loads(response.text)
+				continue
 
-print("Final Translation: " + response_text_final["data"])
+		if(detection_index >= len(detection_pattern)):
+			detection_flag = True
+
+			for rep_token in replacement_pattern: #Add replacement construction to output
+				if(rep_token[0] == "[" and rep_token[1] == "@" and rep_token[-1] == "]"):
+					arg_to_get = rep_token[2]
+					output_sentence.append(arguments[arg_to_get])
+				else:
+					output_sentence.append(rep_token)
+
+			while(not input_buffer.empty()): #Discard original construction
+				input_buffer.get() 
+
+			detection_index = 0
+
+	# Flushing buffer
+	while(not input_buffer.empty()):
+		output_sentence.append(input_buffer.get())
+
+	if(detection_flag):
+		text = " ".join(output_sentence)
+
+#Output after applying all rules
+print(text)
+
