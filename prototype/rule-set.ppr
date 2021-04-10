@@ -1,1 +1,2 @@
-get [PRP$@1] act together -> sort [@1] issues out
+get [PRP$@1] act|acts together -> sort [@1] issues out
+give [NN|NNS@1] the slip -> evade [@1]
