@@ -11,7 +11,7 @@ replacement_input = ""
 
 for line in rule_lines:
 	line = line.strip()
-	print(line)
+
 	if "->" not in line:
 		sys.exit() #Only one rule for now
 
@@ -27,8 +27,6 @@ nlp = spacy.load("en_core_web_sm")
 text = sys.argv[1]
 doc = nlp(text)
 arguments = {}
-
-print(pattern_input, replacement_input)
 
 pattern_tokens = pattern_input.split(" ")
 replacement_tokens = replacement_input.split(" ")
@@ -50,7 +48,6 @@ input_buffer = Queue(maxsize = 0)
 output_sentence = []
 
 for token in doc:
-	print(token, token.tag_)
 	input_buffer.put(str(token))
 
 	pair_to_check = detection_pattern[detection_index]
@@ -87,13 +84,26 @@ for token in doc:
 			continue
 
 	if(detection_index >= len(detection_pattern)):
-		print("Found a pattern!")
+		detection_flag = True
+
+		for rep_token in replacement_tokens: #Add replacement construction to output
+			if(rep_token[0] == "[" and rep_token[1] == "@" and rep_token[-1] == "]"):
+				arg_to_get = rep_token[2]
+				output_sentence.append(arguments[arg_to_get])
+			else:
+				output_sentence.append(rep_token)
+
+		while(not input_buffer.empty()): #Discard original construction
+			input_buffer.get() 
+
 		detection_index = 0
 
 # Flushing buffer
 while(not input_buffer.empty()):
-				output_sentence.append(input_buffer.get())
+	output_sentence.append(input_buffer.get())
 
-print(output_sentence)
-print(arguments)
+if(detection_flag):
+	print(" ".join(output_sentence))
+else:
+	print(text)
 
