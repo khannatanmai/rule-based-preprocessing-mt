@@ -1,11 +1,19 @@
 http://www1.icsi.berkeley.edu/~hsato/cxn00/21colorTag/index.html
 http://sato.fm.senshu-u.ac.jp/frameSQL/cxn/CxNeng/cxn00/21colorTag/index.html
 
+IDEA: What if the pre-processing happens automatically by replacing constructions/multiwords with more compositional alternatives based on a mapped dataset of synsets?
+
 - What are constructions?
 - Difference b/w them and multiwords?
 - Constructions in MT
 - Qualitative evaluation of constructions (Always, sometimes, never) vs. just a qualitative evaluation
 -> Preprocess constructions to translate them better.
+
+1A. jump in
+
+- The vice president should feel free to jump in
+- उपाध्यक्ष को बेझिझक अंदर कूदना चाहिए
+
 
 2. Adjective_as_nominal.abstract / people
 ex.: Easy categorisation about [def the] [adj literary] and the historical are rendered impossible.
@@ -23,7 +31,7 @@ GOOGLE TRANSLATE:
 
 उसकी जिद की नापसंदगी बहुत गहरी है
 
-PRE-EDITED sentences: the [adj] -> [adj] people
+PRE-EDITED sentences: the [adj] ![noun] -> [adj] people
 She dislikes lazy people
 
 She is very fond of ugly people
@@ -55,7 +63,7 @@ b-) Usse batsurat log bohot pasand hai
 d) Though the practical includes the technological, it is wider than that.
 d-) **Not sure**
 
-3. Adjective_as_nominal.anaphoric
+3. Adjective_as_nominal.anaphoric [[REJECT - Anaphora is a separate problem]]
 Given a choice of topics, he would always select the more/most interesting.
 Google Translate: विषयों की पसंद को देखते हुए, वह हमेशा सबसे दिलचस्प का चयन करेगा।
 
@@ -74,7 +82,7 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - He had John fix the car.
 - उसने जॉन से कार ठीक करवाई थी।
 
-5. As.role
+5. As.role = As NOUN -> In the role of NOUN
 - As a director his work embraces the narrative traditions of French cinema.
 एक निर्देशक के रूप में उनका काम फ्रांसीसी सिनेमा की कथा परंपराओं को स्वीकार करता है। (OK)
 - As students, they felt their voice wasn't being heard.
@@ -99,6 +107,12 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - Russia is too powerful of a country to be treated lightly.
 - रूस ऐसे देश से बहुत शक्तिशाली है जो हल्के व्यवहार करता है। (VERY BAD)
 
+NEW GT: रूस हल्के ढंग से व्यवहार किए जाने वाले देश के लिए बहुत शक्तिशाली है। (Much better)
+
+Russia is too powerful a country to be treated lightly.
+रूस बहुत शक्तिशाली देश है जिसे हल्के ढंग से व्यवहार किया जाता है। (Bad)
+
+
 7. Be_recip
 - I'm still friends with my classmates
 - मैं अभी भी अपने सहपाठियों के साथ दोस्त हूँ (Not sure)
@@ -117,13 +131,17 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - Now seems as good a time as any to switch careers.
 - अब करियर स्विच करने के लिए जितना अच्छा समय लगता है। (BAD)
 
-9. I wonder (found randomly)
+9. I wonder (found randomly) [[88000 NOW corpus]]
+Pre-Edit:: I wonder -> I am keen to know
+Bad Pre-Edit:: I wonder -> I am not sure
 
 - I wonder if they will win tomorrow
 मुझे आश्चर्य है कि अगर वे कल जीतेंगे (BAD)
+After Pre-Edit:: मैं यह जानने के लिए उत्सुक हूं कि क्या वे कल जीतेंगे
 
 - I wonder if I will clear the interview
 मुझे आश्चर्य है कि अगर मैं साक्षात्कार को साफ कर दूंगा (BAD) - > maybe even "clear"
+After Pre-Edit:: मैं यह जानने के लिए उत्सुक हूं कि क्या मैं साक्षात्कार को मंजूरी दूंगा (Better)
 
 10. Comparison_inequality
 - Others were more quickly put to use.
@@ -161,7 +179,7 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 
 (Pretty good)
 
-14. Gapping
+14. Gapping [[Whole other issue]]
 
 - He ate the broccoli and others the potatoes.
 - He never said much to her nor she to him.
@@ -198,7 +216,8 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - Only rarely were women paid as much as men for the same work.
 - शायद ही कभी महिलाओं को समान काम के लिए पुरुषों जितना भुगतान किया गया था।
 
-17. Let_alone (ALL BAD)
+17. Let_alone (ALL BAD) [[106605 frequency in NOW corpus]] {Improvement}
+Pre-Edit:: let alone -> leave
 
 - He won't eat chicken teriyaki, let alone raw sea urchin.
 - It will be difficult enough for an individual to be consistent, let alone a society.
@@ -209,6 +228,13 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - किसी व्यक्ति के लिए सुसंगत होना काफी मुश्किल होगा, अकेले समाज को।
 - यह आश्चर्यजनक है कि इस तरह का रवैया सक्षम पटकथा लेखकों का उत्पादन करने में विफल रहा है, अकेले रोमांचक चलो।
 - यहां तक कि दर्शक फैसले से असंतुष्ट थे, पीड़ित को अकेले जाने दें।
+
+After pre-editing:: (slightly better)
+
+- वह चिकन टेरीयाकी नहीं खाएगा, कच्चे समुद्री मूत्र को छोड़ दें।
+- किसी व्यक्ति के लिए सुसंगत होना, एक समाज को छोड़ना काफी कठिन होगा।
+- यह आश्चर्यजनक है कि इस तरह का रवैया सक्षम पटकथा लेखक का निर्माण करने में विफल रहा, रोमांचक लोगों को छोड़ दें।
+- यहां तक कि दर्शक फैसले से असंतुष्ट थे, पीड़ित को छोड़ दें।
 
 18. Location in calendar
 
@@ -222,7 +248,6 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - चलो आज दोपहर एक चैट है। (BAD - Have a chat?)
 - Let's have lunch today
 - चलो आज लंच किया (BAD also)
-
 
 - They were all set to leave early next morning.
 - वे अगली सुबह जल्दी निकलने के लिए तैयार थे।
@@ -267,10 +292,40 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - The garbage mountain stood at over a 100 meters in height.
 - कचरा पहाड़ 100 मीटर की ऊंचाई पर खड़ा था। (Really good)
 
-21. Ones_very_eyes
+21. Ones_very_eyes {IMPROVEMENT} [[3355 in NOW corpus, ~4000 in iWeb corpus]]
 
 - Gardeners, some of whom had seen much of their life's work destroyed before their very eyes, refused to be beaten by an aberration of nature.
 माली, जिनमें से कुछ ने अपने जीवन का अधिकांश काम अपनी आंखों के सामने नष्ट कर दिया था, ने प्रकृति के उल्लंघन से पीटने से इनकार कर दिया। (Good, unrelated issues)
+
+SSMT: बागवानों , जिनमें से कुछ ने अपने जीवन के काम को अपने बहुत आंखों से पहले नष्ट कर दिया था , प्रकृति के एक अभेद्य द्वारा पीटा जाने से इनकार किया था . (Bad)
+
+Pre-Edit:: before DETPOS very eyes -> in front of DETPOS own eyes
+
+After pre-edit:
+बागवानों , जिनमें से कुछ ने अपने जीवन के काम को अपने ही आंखों के सामने नष्ट करते देखा था , प्रकृति के एक अपभ्रंश से पीटा जाने से इनकार कर दिया था ।
+
+21A. Galore
+
+GT::
+
+There are restaurants galore in Delhi
+दिल्ली में रेस्त्राँ जालौर हैं
+
+There are restaurants many in Delhi
+दिल्ली में कई रेस्तरां हैं
+
+There are restaurants abundant in Delhi
+दिल्ली में प्रचुर मात्रा में रेस्तरां हैं
+
+There are restaurants a lot of in Delhi
+दिल्ली में बहुत सारे रेस्तरां हैं
+
+There are many restaurants in Delhi
+दिल्ली में कई रेस्तरां हैं
+
+There are a lot of restaurants in Delhi
+दिल्ली में बहुत सारे रेस्तरां हैं 
+
 
 22. Open_interrogative.non-subject
 
@@ -283,15 +338,19 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 (Good, anaphora issue)
 
 23. One's own right
-
+Pre-edit: in one's own right -> in oneself (is it accurate?)
 - But some find it difficult to treat their grown-up children as people in their own right, entitled to plan their own lives.
 - लेकिन कुछ लोगों को अपने बड़े बच्चों के साथ अपने जीवन में योजना बनाने का अधिकार मिलना मुश्किल है। (Didn't recognise idiom)
 
 - He was a winner in his own right.
-- वह अपने आप में एक विजेता था। (Recognised but not a fully accurate translation)
+- वह अपने आप में एक विजेता था।
+SSMT: वे अपने हक में विजेता रहे ।
+
 
 - She was wealthy in her own right
-- वह अपने आप में धनी थी (Recognised but not a fully accurate translation)
+- वह अपने आप में धनी थी 
+SSMT: वह अपने हक में धनी थी
+
 
 24. Pospositive_adjective
 
@@ -304,7 +363,9 @@ PRE-EDITED Sentence: made sb do sth -> had sb do sth
 - People late to the party won't be allowed to enter.
 - पार्टी में देर से आने वाले लोगों को प्रवेश की अनुमति नहीं दी जाएगी। (Good)
 
-(Galore - compulsory postpositive)
+(Galore - compulsory postpositive) {IMPROVEMENT}
+
+Pre-Editing:: NOUNs galore -> abundant/a lot of NOUNs
 
 - There are restaurants galore in Berkeley.
 - बर्कले में रेस्‍टोरेंट गेलूर हैं।
@@ -501,6 +562,8 @@ There are prizes galore for everything -> हर चीज के लिए प�
 
 37. Subject_auxiliary_inversion
 
+{IMPROVEMENT} Pre-edit:: [[Chunk]] Aux Subject [[VP]] -> Subject Aux [[VP]] [[Chunk]]
+
 - Whatever shall we do?
 - हम जो भी करेंगे? (Bad)
 
@@ -517,7 +580,7 @@ There are prizes galore for everything -> हर चीज के लिए प�
 - केवल सप्ताहांत पर मैं खुश था। (Okayish)
 
 38. Subject_auxiliary_inversion.optative (ALL BAD)
-
+Pre-Editing: "May X" "I hope X"
 - May you turn vegan in Germany.
 - आप जर्मनी में शाकाहारी हो सकते हैं। (BAD)
 
