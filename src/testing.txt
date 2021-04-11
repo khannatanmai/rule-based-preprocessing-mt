@@ -1,0 +1,70 @@
+1. python3 preprocess.py "I wonder if they will win tomorrow" "I wonder" "I am keen to know"
+
+*** Pre-processing: I wonder -> I am keen to know ***
+
+Google Translate
+
+Original Input: I wonder if they will win tomorrow
+Original Translation: मुझे आश्चर्य है कि अगर वे कल जीतेंगे
+
+Pre-processed input: I am keen to know if they will win tomorrow
+Final Translation: मैं यह जानने के लिए उत्सुक हूं कि क्या वे कल जीतेंगे
+
+*****
+
+Swayam Translate
+
+Original Input: I wonder if they will win tomorrow
+Original Translation: मुझे आश्चर्य होता है कि वे कल जीतेंगे तो
+
+Pre-processed input: I am keen to know if they will win tomorrow
+Final Translation: मुझे जानने की उत्सुकता है कि वे कल जीतेंगे तो
+
+2. python3 preprocess.py "Most people don't admit they have mental health issues, let alone reach out for help" "let alone" "leave"
+
+*** Pre-processing: let alone -> leave ***
+
+Google Translate
+
+Original Input: Most people don't admit they have mental health issues, let alone reach out for help
+Original Translation: ज्यादातर लोग स्वीकार नहीं करते हैं कि उनके पास मानसिक स्वास्थ्य के मुद्दे हैं, मदद के लिए अकेले पहुंचें
+
+Pre-processed input: Most people don't admit they have mental health issues, leave reach out for help
+Final Translation: अधिकांश लोग स्वीकार नहीं करते कि उनके पास मानसिक स्वास्थ्य के मुद्दे हैं, मदद के लिए पहुंच छोड़ दें
+
+*****
+
+Swayam Translate
+
+Original Input: Most people don't admit they have mental health issues, let alone reach out for help
+Original Translation: ज्यादातर लोगों को स्वीकार नहीं है वे मानसिक स्वास्थ्य मुद्दे हैं , अकेले मदद के लिए बाहर पहुंच
+
+Pre-processed input: Most people don't admit they have mental health issues, leave reach out for help
+Final Translation: ज्यादातर लोगों को स्वीकार नहीं है वे मानसिक स्वास्थ्य मुद्दे हैं , मदद के लिए बाहर पहुंच छोड़
+
+
+Maybe even deal with phrasal verbs: https://www.englishclub.com/vocabulary/phrasal-verbs-list.htm
+
+3. python3 preprocess.py "When I first started out I didn't think I'd win one game, let alone five" "let alone" "leave"
+
+*** Pre-processing: let alone -> leave ***
+
+Google Translate
+
+Original Input: When I first started out I didn't think I'd win one game, let alone five
+Original Translation: जब मैंने पहली बार शुरुआत की तो मुझे नहीं लगा कि मैं एक गेम जीत पाऊंगा, पांच को अकेले रहने दूंगा
+
+Pre-processed input: When I first started out I didn't think I'd win one game, leave five
+Final Translation: जब मैंने पहली बार शुरुआत की तो मुझे नहीं लगा कि मैं एक गेम जीत पाऊँगा, पाँच छोड़ दो
+
+*****
+
+Swayam Translate
+
+Original Input: When I first started out I didn't think I'd win one game, let alone five
+Original Translation: जब मैं पहले बाहर शुरू किया था मैं नहीं सोचा था कि मैं एक खेल जीत जाएगा , अकेले पांच
+
+Pre-processed input: When I first started out I didn't think I'd win one game, leave five
+Final Translation: जब मैं पहले बाहर शुरू किया था मैं नहीं सोचा था कि मैं एक खेल जीत जाएगा , पांच छोड़ दो
+
+
