@@ -1,8 +1,13 @@
-# construction-mt-evaluation
 # Rule-based pre-processing of non-compositional constructions to simplify them and improve black-box machine translation
+
+## How to Use
+- Install dependencies using `pip install -r requirements.txt`
+- `python3 src/preprocess.py [input sentence] [rule-set.ppr]`
+- Test using `./tests/test.sh`
 
 ## External tools used
 - spacy POS tagger
+- Download model using `python -m spacy download en_core_web_sm`
 
 ## Rule formalism (File extension .ppr)
 

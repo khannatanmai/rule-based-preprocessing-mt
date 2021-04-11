@@ -2,6 +2,15 @@ import spacy
 import sys
 from queue import Queue
 
+#Argument handling
+if(len(sys.argv) != 3):
+	print("Error! Arguments mismatch.")
+	print("Expected Input: " + sys.argv[0] + " [input sentence] [rule_file.ppr]")
+	sys.exit(1)
+
+text = sys.argv[1]
+rule_file_path = sys.argv[2]
+
 #Comparison with multiple options
 def check(x, y):
 	if "!" == x[0]: #! means NOT
@@ -32,7 +41,7 @@ def check(x, y):
 			return False
 
 #Reading rule set
-rule_file = open("rule-set.ppr")
+rule_file = open(rule_file_path)
 rule_lines = rule_file.readlines()
 
 patterns_and_replacements = []
@@ -66,7 +75,6 @@ for line in rule_lines:
 	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
 nlp = spacy.load("en_core_web_sm")
-text = sys.argv[1]
 
 for detection_pattern, replacement_pattern in patterns_and_replacements:
 	doc = nlp(text)
@@ -83,7 +91,6 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 	doc_index = 0
 
 	while(doc_index < len(doc)):
-		print(doc[doc_index])
 		input_buffer.put(str(doc[doc_index]))
 
 		pair_to_check = detection_pattern[detection_index]
@@ -158,7 +165,6 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 
 		doc_index += 1
 
-	print(output_sentence)
 	# Flushing buffer
 	while(not input_buffer.empty()):
 		output_sentence.append(input_buffer.get())
