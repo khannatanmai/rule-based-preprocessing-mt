@@ -34,10 +34,17 @@ for line in rule_lines:
 	# preparing pattern for detection
 	detection_pattern = []
 	for i in pattern_tokens:
-		if(i[0] == "[" and i[-1] == "]"):
-			detection_pattern.append((i[1:-1],1)) #type 1: POS tag
+		i_temp = i
+		if(i_temp[0] == "(" and i_temp[-1] == ")"): #Optional detection token	
+			if(i[1] == "[" and i[-2] == "]"):
+				detection_pattern.append((i[2:-2],3)) #type 3: Optional POS tag
+			else:
+				detection_pattern.append((i[1:-1],2)) #type 2: Optional string
 		else:
-			detection_pattern.append((i,0)) #type 0: String
+			if(i[0] == "[" and i[-1] == "]"):
+				detection_pattern.append((i[1:-1],1)) #type 1: POS tag
+			else:
+				detection_pattern.append((i,0)) #type 0: String
 
 	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
@@ -56,21 +63,21 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 
 	output_sentence = []
 
-	for token in doc:
-		input_buffer.put(str(token))
+	doc_index = 0
+
+	while(doc_index < len(doc)):
+		input_buffer.put(str(doc[doc_index]))
 
 		pair_to_check = detection_pattern[detection_index]
 
 		#Matching one word from the pattern (index -> detection index)
 		if(pair_to_check[1] == 0): #CHECK STRING
-			if(check(pair_to_check[0], str(token))):
+			if(check(pair_to_check[0], str(doc[doc_index]))):
 				detection_index += 1
 			else:
 				detection_index = 0
 				while(not input_buffer.empty()):
 					output_sentence.append(input_buffer.get())
-
-				continue
 
 		elif(pair_to_check[1] == 1): #CHECK POS TAG
 			temp_arg = ""
@@ -82,15 +89,39 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 			else:
 				pos_to_check = pair_to_check[0]
 
-			if(check(pos_to_check, str(token.tag_))):
+			if(check(pos_to_check, str(doc[doc_index].tag_))):
 				detection_index += 1
-				arguments[temp_arg] = str(token)
+				arguments[temp_arg] = str(doc[doc_index])
 			else:
-				detection_flag = 0
+				detection_index = 0
+
 				while(not input_buffer.empty()):
 					output_sentence.append(input_buffer.get())
 
-				continue
+		elif(pair_to_check[1] == 2): #CHECK OPTIONAL STRING
+			if(check(pair_to_check[0], str(doc[doc_index]))):
+				detection_index += 1
+			else:
+				detection_index += 1
+				doc_index -= 1
+
+		elif(pair_to_check[1] == 3): #CHECK OPTIONAL POS TAG
+			temp_arg = ""
+			pos_to_check = ""
+
+			if(pair_to_check[0][-2] == "@"): #argument number mentioned
+				temp_arg = pair_to_check[0][-1]
+				pos_to_check = pair_to_check[0][:-2]
+			else:
+				pos_to_check = pair_to_check[0]
+
+			if(check(pos_to_check, str(doc[doc_index].tag_))):
+				detection_index += 1
+				arguments[temp_arg] = str(doc[doc_index])
+			else:
+				detection_index += 1
+				doc_index -= 1
+
 
 		if(detection_index >= len(detection_pattern)):
 			detection_flag = True
@@ -106,6 +137,8 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 				input_buffer.get() 
 
 			detection_index = 0
+
+		doc_index += 1
 
 	# Flushing buffer
 	while(not input_buffer.empty()):

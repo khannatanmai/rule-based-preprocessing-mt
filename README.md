@@ -10,6 +10,7 @@
 - `[...]` : POS Tags
 - `[..@1]` : Arguments numbered `0-9,a-z`,etc. to be used in the target side
 - `|` used as OR, can be used for POS tags or strings
+- `(...)` : Optional tokens, can be used on both POS tags or strings, i.e. `(not)` or `([NN])`
 
 ### Target side rules
 - `[@1]` : Add the argument numbered 1 in the target side construction
