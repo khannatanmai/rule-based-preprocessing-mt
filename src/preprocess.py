@@ -4,15 +4,32 @@ from queue import Queue
 
 #Comparison with multiple options
 def check(x, y):
-	if "|" not in x:
-		return (x == y)
-	else:
-		x_parts = x.split("|")
-		for i in x_parts:
-			if(i == y):
-				return True
+	if "!" == x[0]: #! means NOT
+		if len(x) == 1: #if input token is just !
+			return (x == y)
 
-		return False
+		x_temp = x[1:] #remove !
+
+		if "|" not in x_temp:
+			return (x_temp != y)
+		else:
+			x_parts = x_temp.split("|")
+			for i in x_parts:
+				if(i == y):
+					return False
+
+			return True
+
+	else:
+		if "|" not in x:
+			return (x == y)
+		else:
+			x_parts = x.split("|")
+			for i in x_parts:
+				if(i == y):
+					return True
+
+			return False
 
 #Reading rule set
 rule_file = open("rule-set.ppr")
@@ -66,6 +83,7 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 	doc_index = 0
 
 	while(doc_index < len(doc)):
+		print(doc[doc_index])
 		input_buffer.put(str(doc[doc_index]))
 
 		pair_to_check = detection_pattern[detection_index]
@@ -140,6 +158,7 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 
 		doc_index += 1
 
+	print(output_sentence)
 	# Flushing buffer
 	while(not input_buffer.empty()):
 		output_sentence.append(input_buffer.get())
