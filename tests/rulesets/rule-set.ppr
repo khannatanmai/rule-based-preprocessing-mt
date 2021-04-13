@@ -1,4 +1,4 @@
-get (not) [PRP$@1] act|acts together -> sort [@1] issues out
+get [PRP$@1] act|acts together -> sort [@1] issues out
 give [NN|NNS|PRP@1] the slip -> evade [@1]
 water under the bridge -> an old talk
 to do with -> related to
