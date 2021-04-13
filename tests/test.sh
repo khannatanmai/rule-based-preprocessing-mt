@@ -62,7 +62,7 @@ echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-echo "Test 4: Multiple arguments"
+echo "Test 4: Multiple variables"
 
 input_text="She dislikes the lazy and will fix this department."
 rule_file="rule-set.ppr"
