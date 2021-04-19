@@ -1,4 +1,4 @@
-get [PRP$@1] act|acts together -> sort [@1] issues out
+get [PRP$@1] act|acts together -> sort out [@1] issues
 give [NN|NNS|PRP@1] the slip -> evade [@1]
 water under the bridge -> an old talk
 to do with -> related to
@@ -13,3 +13,6 @@ before [PRP$@1] very eyes -> in front of [@1] own eyes
 let alone -> leave
 the [JJ@1] [!NN|NNS@2] -> [@1] people [@2] 
 should feel free to jump in -> should not hesitate to get involved
+feel free to jump in -> don't hesitate to get involved
+the one with the [@1] -> the one which has the [@1]
+thorn in ([DT@1]) [PRP$|NN|NNS|NNP@2] ([POS]) side -> persistent problem for [@1] [@2|my:me|his:him|their:them|its:it]

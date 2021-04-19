@@ -15,7 +15,7 @@ echo "Test 1: Basic with POS Tag"
 
 input_text="US forces in Iraq need to get their act together there and really dampen the situation and stop inflaming things by confrontational policies."
 rule_file="rule-set.ppr"
-expected_output="US forces in Iraq need to sort their issues out there and really dampen the situation and stop inflaming things by confrontational policies ."
+expected_output="US forces in Iraq need to sort out their issues there and really dampen the situation and stop inflaming things by confrontational policies ."
 
 python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
 echo $expected_output > check_output.txt
@@ -26,7 +26,7 @@ echo "Test 2: Multiple rules"
 
 input_text="US forces in Iraq need to get their act together there and the vice president should feel free to jump in"
 rule_file="rule-set.ppr"
-expected_output="US forces in Iraq need to sort their issues out there and the vice president should not hesitate to get involved"
+expected_output="US forces in Iraq need to sort out their issues there and the vice president should not hesitate to get involved"
 
 python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
 echo $expected_output > check_output.txt
@@ -89,6 +89,55 @@ echo "Test 6: NOT Operator"
 input_text="She dislikes the lazy employees and will fix this department."
 rule_file="rule-set.ppr"
 expected_output="She dislikes the lazy employees and will fix this department."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+echo "Test 7: Match Any Token Operator"
+
+input_text="It's the one with the actor who went to jail."
+rule_file="rule-set.ppr"
+expected_output="It 's the one which has the actor who went to jail ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+echo "Test 8: Mappings in Replacement Rules"
+
+input_text="This pandemic is a thorn in his side."
+rule_file="rule-set.ppr"
+expected_output="This pandemic is a persistent problem for him ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="This pandemic is a thorn in their side."
+rule_file="rule-set.ppr"
+expected_output="This pandemic is a persistent problem for them ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="This pandemic is a thorn in Pushpa's side."
+rule_file="rule-set.ppr"
+expected_output="This pandemic is a persistent problem for Pushpa ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="This pandemic is a thorn in the police's side."
+rule_file="rule-set.ppr"
+expected_output="This pandemic is a persistent problem for the police ."
 
 python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
 echo $expected_output > check_output.txt

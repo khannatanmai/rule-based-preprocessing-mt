@@ -13,6 +13,9 @@ rule_file_path = sys.argv[2]
 
 #Comparison with multiple options
 def check(x, y):
+	if(x == ''): #If pattern token is [], i.e. match anything
+		return True
+
 	if "!" == x[0]: #! means NOT
 		if len(x) == 1: #if input token is just !
 			return (x == y)
@@ -74,7 +77,7 @@ for line in rule_lines:
 
 	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm", exclude=["parser", "ner", "attribute_ruler", "lemmatizer"])
 
 for detection_pattern, replacement_pattern in patterns_and_replacements:
 	doc = nlp(text)
@@ -144,6 +147,7 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 				detection_index += 1
 				arguments[temp_arg] = str(doc[doc_index])
 			else:
+				arguments[temp_arg] = ''
 				detection_index += 1
 				doc_index -= 1
 
@@ -154,7 +158,22 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 			for rep_token in replacement_pattern: #Add replacement construction to output
 				if(rep_token[0] == "[" and rep_token[1] == "@" and rep_token[-1] == "]"):
 					arg_to_get = rep_token[2]
-					output_sentence.append(arguments[arg_to_get])
+					output_rep_token = arguments[arg_to_get] #default output
+
+					if(output_rep_token == ''): #if it's empty, skip loop iteration
+						continue
+
+					if(rep_token[3] == "|"): #additional mappings provided
+						
+						add_maps = rep_token[4:-1].split("|")
+
+						for i in add_maps:
+							i_temp = i.split(":")
+							if(output_rep_token == i_temp[0]):
+								output_rep_token = i_temp[1] #making the replacement
+								break
+
+					output_sentence.append(output_rep_token)
 				else:
 					output_sentence.append(rep_token)
 

@@ -16,13 +16,15 @@
 - `[..@1]` : Variables named `0-9,a-z`,etc. to be used in the target side
 - `|` used as OR, can be used for POS tags or strings
 - `(...)` : Optional tokens, can be used on both POS tags or strings, i.e. `(not)` or `([NN])`
-- `!` used as NOT, can be used for POS tags `[!...]` or strings `!xyz`
+- `!` : Used as NOT, can be used for POS tags `[!...]` or strings `!xyz`
+- `[] or [@1]` : Will match any token
 - If you just want to define the context, use variables to copy the context over to the target.
 
 For example, if you want a rule that matches "the" followed by an Adjective, which is NOT followed by a noun, it will look something like: ```the [JJ@1] [!NN|NNS@2] -> [@1] people [@2]```
 
 ### Target side rules
 - `[@1]` : Add the variable named 1 in the target side construction
+- `[@2|my:me|his:him]` : Add any number of mappings in the target side. If the string in the variable matches the left side of any of `:` separated strings, the right side will appear in the output. Can be used to hardcode morph changes, etc.
 
 ### General
 
