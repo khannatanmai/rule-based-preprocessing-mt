@@ -25,6 +25,7 @@ For example, if you want a rule that matches "the" followed by an Adjective, whi
 ### Target side rules
 - `[@1]` : Add the variable named 1 in the target side construction
 - `[@2|my:me|his:him]` : Add any number of mappings in the target side. If the string in the variable matches the left side of any of `:` separated strings, the right side will appear in the output. Can be used to hardcode morph changes, etc.
+- `[@1:die|kick:die|kicks:dies]` : The user can also define a default replacement of the token, in case none of the maps defined execute. If no default value is defined, and none of the maps execute, then the value in the variable is printed out.
 
 ### General
 

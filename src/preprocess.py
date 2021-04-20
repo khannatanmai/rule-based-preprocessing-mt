@@ -67,17 +67,21 @@ for line in rule_lines:
 		if(i_temp[0] == "(" and i_temp[-1] == ")"): #Optional detection token	
 			if(i[1] == "[" and i[-2] == "]"):
 				detection_pattern.append((i[2:-2],3)) #type 3: Optional POS tag
+			elif(i[1] == "{" and i[-2] == "}"):
+				detection_pattern.append((i[2:-2],5)) #type 5: Optional Lemma
 			else:
-				detection_pattern.append((i[1:-1],2)) #type 2: Optional string
+				detection_pattern.append((i[1:-1],2)) #type 2: Optional String
 		else:
 			if(i[0] == "[" and i[-1] == "]"):
 				detection_pattern.append((i[1:-1],1)) #type 1: POS tag
+			elif(i[0] == "{" and i[-1] == "}"):
+				detection_pattern.append((i[1:-1],4)) #type 4: Lemma
 			else:
 				detection_pattern.append((i,0)) #type 0: String
 
 	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
-nlp = spacy.load("en_core_web_sm", exclude=["parser", "ner", "attribute_ruler", "lemmatizer"])
+nlp = spacy.load("en_core_web_sm", disable=["parser", "ner", "attribute_ruler"])
 
 for detection_pattern, replacement_pattern in patterns_and_replacements:
 	doc = nlp(text)
@@ -126,6 +130,25 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 				while(not input_buffer.empty()):
 					output_sentence.append(input_buffer.get())
 
+		elif(pair_to_check[1] == 4): #CHECK LEMMA
+			temp_arg = ""
+			lemma_to_check = ""
+
+			if(pair_to_check[0][-2] == "@"): #argument number mentioned
+				temp_arg = pair_to_check[0][-1]
+				lemma_to_check = pair_to_check[0][:-2]
+			else:
+				lemma_to_check = pair_to_check[0]
+
+			if(check(lemma_to_check, str(doc[doc_index].lemma_))):
+				detection_index += 1
+				arguments[temp_arg] = str(doc[doc_index])
+			else:
+				detection_index = 0
+
+				while(not input_buffer.empty()):
+					output_sentence.append(input_buffer.get())
+
 		elif(pair_to_check[1] == 2): #CHECK OPTIONAL STRING
 			if(check(pair_to_check[0], str(doc[doc_index]))):
 				detection_index += 1
@@ -151,8 +174,26 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 				detection_index += 1
 				doc_index -= 1
 
+		elif(pair_to_check[1] == 3): #CHECK OPTIONAL LEMMA
+			temp_arg = ""
+			lemma_to_check = ""
 
-		if(detection_index >= len(detection_pattern)):
+			if(pair_to_check[0][-2] == "@"): #argument number mentioned
+				temp_arg = pair_to_check[0][-1]
+				lemma_to_check = pair_to_check[0][:-2]
+			else:
+				lemma_to_check = pair_to_check[0]
+
+			if(check(pos_to_check, str(doc[doc_index].lemma_))):
+				detection_index += 1
+				arguments[temp_arg] = str(doc[doc_index])
+			else:
+				arguments[temp_arg] = ''
+				detection_index += 1
+				doc_index -= 1
+
+
+		if(detection_index >= len(detection_pattern)): #Check if full pattern detected
 			detection_flag = True
 
 			for rep_token in replacement_pattern: #Add replacement construction to output
@@ -163,7 +204,22 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 					if(output_rep_token == ''): #if it's empty, skip loop iteration
 						continue
 
-					if(rep_token[3] == "|"): #additional mappings provided
+					if(rep_token[3] == ":"): #default replacement provided
+
+						add_maps = rep_token[4:-1].split("|")
+
+						repl_flag = False
+						for i in add_maps[1:]:
+							i_temp = i.split(":")
+							if(output_rep_token == i_temp[0]):
+								output_rep_token = i_temp[1] #making the replacement
+								repl_flag = True
+								break
+
+						if(not repl_flag):
+							output_rep_token = add_maps[0]
+
+					elif(rep_token[3] == "|"): #additional replacements provided
 						
 						add_maps = rep_token[4:-1].split("|")
 
@@ -174,6 +230,7 @@ for detection_pattern, replacement_pattern in patterns_and_replacements:
 								break
 
 					output_sentence.append(output_rep_token)
+
 				else:
 					output_sentence.append(rep_token)
 

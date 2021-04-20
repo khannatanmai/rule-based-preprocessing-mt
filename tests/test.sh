@@ -144,6 +144,44 @@ echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
+echo "Test 9: Lemma matching"
+
+input_text="I will find this poster before I kick the bucket."
+rule_file="rule-set.ppr"
+expected_output="I will find this poster before I die ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="Have you heard ? The old man down the street has kicked the bucket ."
+rule_file="rule-set.ppr"
+expected_output="Have you heard ? The old man down the street has died ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="He knew that he will be able to achieve everything on the list before he kicks the bucket ."
+rule_file="rule-set.ppr"
+expected_output="He knew that he will be able to achieve everything on the list before he dies ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
+input_text="He knew that he will be able to achieve everything on the list before kicking the bucket ."
+rule_file="rule-set.ppr"
+expected_output="He knew that he will be able to achieve everything on the list before dying ."
+
+python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+echo $expected_output > check_output.txt
+
+Compare_Outputs check_output.txt temp_output.txt
+
 rm -rf check_output.txt temp_output.txt
 
 echo "All tests successfully passed!"
