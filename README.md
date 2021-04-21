@@ -2,7 +2,7 @@
 
 ## How to Use
 - Install dependencies using `pip install -r requirements.txt`
-- `python3 src/preprocess.py [input sentence] [rule-set.ppr]`
+- `python3 src/preprocess.py [rule_file.ppr] [input_file.txt]`
 - Test using `./tests/test.sh`
 
 ## External tools used

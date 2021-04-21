@@ -2,14 +2,20 @@ import spacy
 import sys
 from queue import Queue
 
+def print_to_stderr(*a):
+  
+    # Here a is the array holding the objects
+    # passed as the arguement of the function
+    print(*a, file = sys.stderr)
+
 #Argument handling
 if(len(sys.argv) != 3):
 	print("Error! Arguments mismatch.")
-	print("Expected Input: " + sys.argv[0] + " [input sentence] [rule_file.ppr]")
+	print("Expected Input: " + sys.argv[0] + " [rule_file.ppr] [input_file.txt]")
 	sys.exit(1)
 
-text = sys.argv[1]
-rule_file_path = sys.argv[2]
+rule_file_path = sys.argv[1]
+input_file_path = sys.argv[2]
 
 #Comparison with multiple options
 def check(x, y):
@@ -83,171 +89,176 @@ for line in rule_lines:
 
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner", "attribute_ruler"])
 
-for detection_pattern, replacement_pattern in patterns_and_replacements:
-	doc = nlp(text)
-	arguments = {}
+input_lines = open(input_file_path).readlines()
 
-	# detection in source sentence
-	detection_flag = False
-	detection_index = 0
+count_input_line = 0
+total_lines = len(input_lines)
 
-	input_buffer = Queue(maxsize = 0)
+for line in input_lines:
+	text = line.strip()
+	count_input_line += 1
+	print_to_stderr(str(count_input_line*100/total_lines) + "% Done")
 
-	output_sentence = []
+	for detection_pattern, replacement_pattern in patterns_and_replacements:
+		doc = nlp(text)
+		arguments = {}
 
-	doc_index = 0
+		# detection in source sentence
+		detection_flag = False
+		detection_index = 0
 
-	while(doc_index < len(doc)):
-		input_buffer.put(str(doc[doc_index]))
+		input_buffer = Queue(maxsize = 0)
 
-		pair_to_check = detection_pattern[detection_index]
+		output_sentence = []
 
-		#Matching one word from the pattern (index -> detection index)
-		if(pair_to_check[1] == 0): #CHECK STRING
-			if(check(pair_to_check[0], str(doc[doc_index]))):
-				detection_index += 1
-			else:
-				detection_index = 0
-				while(not input_buffer.empty()):
-					output_sentence.append(input_buffer.get())
+		doc_index = 0
 
-		elif(pair_to_check[1] == 1): #CHECK POS TAG
+		while(doc_index < len(doc)):
+			input_buffer.put(str(doc[doc_index]))
+
+			pair_to_check = detection_pattern[detection_index]
+
 			temp_arg = ""
-			pos_to_check = ""
+			rule_token = ""
+			has_arg = False
 
-			if(pair_to_check[0][-2] == "@"): #argument number mentioned
-				temp_arg = pair_to_check[0][-1]
-				pos_to_check = pair_to_check[0][:-2]
-			else:
-				pos_to_check = pair_to_check[0]
-
-			if(check(pos_to_check, str(doc[doc_index].tag_))):
-				detection_index += 1
-				arguments[temp_arg] = str(doc[doc_index])
-			else:
-				detection_index = 0
-
-				while(not input_buffer.empty()):
-					output_sentence.append(input_buffer.get())
-
-		elif(pair_to_check[1] == 4): #CHECK LEMMA
-			temp_arg = ""
-			lemma_to_check = ""
-
-			if(pair_to_check[0][-2] == "@"): #argument number mentioned
-				temp_arg = pair_to_check[0][-1]
-				lemma_to_check = pair_to_check[0][:-2]
-			else:
-				lemma_to_check = pair_to_check[0]
-
-			if(check(lemma_to_check, str(doc[doc_index].lemma_))):
-				detection_index += 1
-				arguments[temp_arg] = str(doc[doc_index])
-			else:
-				detection_index = 0
-
-				while(not input_buffer.empty()):
-					output_sentence.append(input_buffer.get())
-
-		elif(pair_to_check[1] == 2): #CHECK OPTIONAL STRING
-			if(check(pair_to_check[0], str(doc[doc_index]))):
-				detection_index += 1
-			else:
-				detection_index += 1
-				doc_index -= 1
-
-		elif(pair_to_check[1] == 3): #CHECK OPTIONAL POS TAG
-			temp_arg = ""
-			pos_to_check = ""
-
-			if(pair_to_check[0][-2] == "@"): #argument number mentioned
-				temp_arg = pair_to_check[0][-1]
-				pos_to_check = pair_to_check[0][:-2]
-			else:
-				pos_to_check = pair_to_check[0]
-
-			if(check(pos_to_check, str(doc[doc_index].tag_))):
-				detection_index += 1
-				arguments[temp_arg] = str(doc[doc_index])
-			else:
-				arguments[temp_arg] = ''
-				detection_index += 1
-				doc_index -= 1
-
-		elif(pair_to_check[1] == 3): #CHECK OPTIONAL LEMMA
-			temp_arg = ""
-			lemma_to_check = ""
-
-			if(pair_to_check[0][-2] == "@"): #argument number mentioned
-				temp_arg = pair_to_check[0][-1]
-				lemma_to_check = pair_to_check[0][:-2]
-			else:
-				lemma_to_check = pair_to_check[0]
-
-			if(check(pos_to_check, str(doc[doc_index].lemma_))):
-				detection_index += 1
-				arguments[temp_arg] = str(doc[doc_index])
-			else:
-				arguments[temp_arg] = ''
-				detection_index += 1
-				doc_index -= 1
-
-
-		if(detection_index >= len(detection_pattern)): #Check if full pattern detected
-			detection_flag = True
-
-			for rep_token in replacement_pattern: #Add replacement construction to output
-				if(rep_token[0] == "[" and rep_token[1] == "@" and rep_token[-1] == "]"):
-					arg_to_get = rep_token[2]
-					output_rep_token = arguments[arg_to_get] #default output
-
-					if(output_rep_token == ''): #if it's empty, skip loop iteration
-						continue
-
-					if(rep_token[3] == ":"): #default replacement provided
-
-						add_maps = rep_token[4:-1].split("|")
-
-						repl_flag = False
-						for i in add_maps[1:]:
-							i_temp = i.split(":")
-							if(output_rep_token == i_temp[0]):
-								output_rep_token = i_temp[1] #making the replacement
-								repl_flag = True
-								break
-
-						if(not repl_flag):
-							output_rep_token = add_maps[0]
-
-					elif(rep_token[3] == "|"): #additional replacements provided
-						
-						add_maps = rep_token[4:-1].split("|")
-
-						for i in add_maps:
-							i_temp = i.split(":")
-							if(output_rep_token == i_temp[0]):
-								output_rep_token = i_temp[1] #making the replacement
-								break
-
-					output_sentence.append(output_rep_token)
-
+			if(len(pair_to_check[0]) >= 2):
+				if(pair_to_check[0][-2] == "@"): #argument number mentioned
+					temp_arg = pair_to_check[0][-1]
+					rule_token = pair_to_check[0][:-2]
+					has_arg = True
 				else:
-					output_sentence.append(rep_token)
+					rule_token = pair_to_check[0]
+			else:
+				rule_token = pair_to_check[0]
+				
 
-			while(not input_buffer.empty()): #Discard original construction
-				input_buffer.get() 
+			#Matching one word from the pattern (index -> detection index)
+			if(pair_to_check[1] == 0): #CHECK STRING
+				if(check(rule_token, str(doc[doc_index]))):
+					detection_index += 1
 
-			detection_index = 0
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					detection_index = 0
 
-		doc_index += 1
+					while(not input_buffer.empty()):
+						output_sentence.append(input_buffer.get())
 
-	# Flushing buffer
-	while(not input_buffer.empty()):
-		output_sentence.append(input_buffer.get())
+			elif(pair_to_check[1] == 1): #CHECK POS TAG
+				if(check(rule_token, str(doc[doc_index].tag_))):
+					detection_index += 1
 
-	if(detection_flag):
-		text = " ".join(output_sentence)
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					detection_index = 0
 
-#Output after applying all rules
-print(text)
+					while(not input_buffer.empty()):
+						output_sentence.append(input_buffer.get())
+
+			elif(pair_to_check[1] == 4): #CHECK LEMMA
+				if(check(rule_token, str(doc[doc_index].lemma_))):
+					detection_index += 1
+
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					detection_index = 0
+
+					while(not input_buffer.empty()):
+						output_sentence.append(input_buffer.get())
+
+			elif(pair_to_check[1] == 2): #CHECK OPTIONAL STRING
+				if(check(rule_token, str(doc[doc_index]))):
+					detection_index += 1
+
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					arguments[temp_arg] = ''
+					detection_index += 1
+					doc_index -= 1
+
+			elif(pair_to_check[1] == 3): #CHECK OPTIONAL POS TAG
+				if(check(rule_token, str(doc[doc_index].tag_))):
+					detection_index += 1
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					arguments[temp_arg] = ''
+					detection_index += 1
+					doc_index -= 1
+
+			elif(pair_to_check[1] == 5): #CHECK OPTIONAL LEMMA
+				if(check(rule_token, str(doc[doc_index].lemma_))):
+					detection_index += 1
+					if(has_arg):
+						arguments[temp_arg] = str(doc[doc_index])
+				else:
+					arguments[temp_arg] = ''
+					detection_index += 1
+					doc_index -= 1
+
+
+			if(detection_index >= len(detection_pattern)): #Check if full pattern detected
+				detection_flag = True
+
+				for rep_token in replacement_pattern: #Add replacement construction to output
+					if(rep_token[0] == "[" and rep_token[1] == "@" and rep_token[-1] == "]"):
+						arg_to_get = rep_token[2]
+						output_rep_token = arguments[arg_to_get] #default output
+
+						if(output_rep_token == ''): #if it's empty, skip loop iteration
+							continue
+
+						if(rep_token[3] == ":"): #default replacement provided
+
+							add_maps = rep_token[4:-1].split("|")
+
+							repl_flag = False
+							for i in add_maps[1:]:
+								i_temp = i.split(":")
+								if(output_rep_token == i_temp[0]):
+									output_rep_token = i_temp[1] #making the replacement
+									repl_flag = True
+									break
+
+							if(not repl_flag):
+								output_rep_token = add_maps[0]
+
+						elif(rep_token[3] == "|"): #additional replacements provided
+							
+							add_maps = rep_token[4:-1].split("|")
+
+							for i in add_maps:
+								i_temp = i.split(":")
+								if(output_rep_token == i_temp[0]):
+									output_rep_token = i_temp[1] #making the replacement
+									break
+
+						output_sentence.append(output_rep_token)
+
+					else:
+						output_sentence.append(rep_token)
+
+				while(not input_buffer.empty()): #Discard original construction
+					input_buffer.get() 
+
+				detection_index = 0
+
+			doc_index += 1
+
+		# Flushing buffer
+		while(not input_buffer.empty()):
+			output_sentence.append(input_buffer.get())
+
+		if(detection_flag):
+			text = "Detected\t" + " ".join(output_sentence)
+		else:
+			text = "Not Detected\t" + text
+
+	#Output after applying all rules
+	print(text)
 

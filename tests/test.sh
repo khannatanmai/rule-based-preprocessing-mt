@@ -13,176 +13,176 @@ fi
 
 echo "Test 1: Basic with POS Tag"
 
-input_text="US forces in Iraq need to get their act together there and really dampen the situation and stop inflaming things by confrontational policies."
+echo "US forces in Iraq need to get their act together there and really dampen the situation and stop inflaming things by confrontational policies." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="US forces in Iraq need to sort out their issues there and really dampen the situation and stop inflaming things by confrontational policies ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 2: Multiple rules"
 
-input_text="US forces in Iraq need to get their act together there and the vice president should feel free to jump in"
+echo "US forces in Iraq need to get their act together there and the vice president should feel free to jump in" > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="US forces in Iraq need to sort out their issues there and the vice president should not hesitate to get involved"
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 3: Optional Token"
 
-input_text="You are a student here, aren't you?"
+echo "You are a student here, aren't you?" > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="You are a student here , right ?"
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="We aren't going with him, are we?"
+echo "We aren't going with him, are we?" > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="We are n't going with him , right ?"
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="He really looks like that actor, does he not?"
+echo "He really looks like that actor, does he not?" > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="He really looks like that actor , right ?"
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 4: Multiple variables"
 
-input_text="She dislikes the lazy and will fix this department."
+echo "She made her students take the test again." > input_text.txt
 rule_file="rule-set.ppr"
-expected_output="She dislikes lazy people and will fix this department ."
+expected_output="She caused her students to take the test again ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 5: OR Operator"
 
-input_text="He told me to give police the slip and then I told them to give her the slip."
+echo "He told me to give police the slip and then I told them to give her the slip." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="He told me to evade police and then I told them to evade her ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 6: NOT Operator"
 
-input_text="She dislikes the lazy employees and will fix this department."
+echo "She dislikes the lazy employees and will fix this department." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="She dislikes the lazy employees and will fix this department."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 7: Match Any Token Operator"
 
-input_text="It's the one with the actor who went to jail."
+echo "It's the one with the actor who went to jail." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="It 's the one which has the actor who went to jail ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 8: Mappings in Replacement Rules"
 
-input_text="This pandemic is a thorn in his side."
+echo "This pandemic is a thorn in his side." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="This pandemic is a persistent problem for him ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="This pandemic is a thorn in their side."
+echo "This pandemic is a thorn in their side." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="This pandemic is a persistent problem for them ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="This pandemic is a thorn in Pushpa's side."
+echo "This pandemic is a thorn in Pushpa's side." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="This pandemic is a persistent problem for Pushpa ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="This pandemic is a thorn in the police's side."
+echo "This pandemic is a thorn in the police's side." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="This pandemic is a persistent problem for the police ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
 echo "Test 9: Lemma matching"
 
-input_text="I will find this poster before I kick the bucket."
+echo "I will find this poster before I kick the bucket." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="I will find this poster before I die ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="Have you heard ? The old man down the street has kicked the bucket ."
+echo "Have you heard ? The old man down the street has kicked the bucket ." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="Have you heard ? The old man down the street has died ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="He knew that he will be able to achieve everything on the list before he kicks the bucket ."
+echo "He knew that he will be able to achieve everything on the list before he kicks the bucket ." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="He knew that he will be able to achieve everything on the list before he dies ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-input_text="He knew that he will be able to achieve everything on the list before kicking the bucket ."
+echo "He knew that he will be able to achieve everything on the list before kicking the bucket ." > input_text.txt
 rule_file="rule-set.ppr"
 expected_output="He knew that he will be able to achieve everything on the list before dying ."
 
-python3 ../src/preprocess.py "$input_text" "rulesets/$rule_file" > temp_output.txt
+python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
 echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-rm -rf check_output.txt temp_output.txt
+rm -rf check_output.txt temp_output.txt input_text.txt
 
 echo "All tests successfully passed!"
 
