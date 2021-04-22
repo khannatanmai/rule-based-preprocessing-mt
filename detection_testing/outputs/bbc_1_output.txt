@@ -96,7 +96,7 @@ Not Detected	But he has rejected any tariff increases, alleging this will impove
 Not Detected	Also, there will surely be a wider spectrum for international music as three top radio DJs unite under the One World name.
 Not Detected	In its first overview of the disaster, the ADB said the impact on economic growth would be slight because major cities and factories escaped damage.
 Not Detected	A Republican senator from Kansas, Sam Brownbeck, is set to call for a maximum $3 million (£1.6 million) fine for repeated violations.
-Construct Detected	Now Mr Tsutsumi faces criminal charges and the possibility of a prison sentence because he caused it to look as if the 10 biggest shareholders owned less than this amount .
+Construct Detected	Now Mr Tsutsumi faces criminal charges and the possibility of a prison sentence because he caused it to look as if the 10 biggest shareholders owned less than this amount.
 Not Detected	Now we see this can disappear in a few days, a few minutes.
 Not Detected	Mr Khodorkovsky is in jail on charges of fraud and tax evasion.
 Not Detected	Urban as a genre is very broad.
@@ -767,7 +767,7 @@ Not Detected	The firm's creditors - which own 99% of LG Card - have been trying 
 Not Detected	The ODPM attributed the monthly fall of prices in November to a drop in the value of detached houses and flats.
 Not Detected	Unadjusted, the figures showed unemployment rose 206,900 to 4.64 million - with many sectors such as construction laying off workers amid bad weather.
 Not Detected	Paris-based LVMH has been selling non-core businesses and focusing on its most profitable labels including Moet & Chandon champagne and Louis Vuitton.
-Construct Detected	However , poor ticket sales have less related to any fallout from the disaster and more related to administrative and promotional difficulties .
+Construct Detected	However, poor ticket sales have less related to any fallout from the disaster and more related to administrative and promotional difficulties.
 Not Detected	The prequel project was originally announced in 2001, with actor Liam Neeson in the lead role and John Frankenheimer as director.
 Not Detected	A US television network will screen a celebrity TV special to benefit the tsunami relief effort in South Asia.
 Not Detected	It's a mediocre, sentimental and safe song.

@@ -535,13 +535,13 @@ Not Detected	At the St Enoch's Shopping Centre in Glasgow, more than 140,000 sho
 Not Detected	The TV host said he understood how people could have thought the musical had gone too far.
 Not Detected	I'm not really comfortable with the word urban.
 Not Detected	"It is too dependant on the rest of the world."
-Construct Detected	It 's only because the people who were children when these programmes were first shown have grown up and are plundering their childhoods , right ?
+Construct Detected	It's only because the people who were children when these programmes were first shown have grown up and are plundering their childhoods, right ?
 Not Detected	"It came at the worst possible time," said Hans Goetti, a Singapore-based fund manager.
 Not Detected	The ONS is due to publish its second estimate of third quarter growth on Friday.
 Not Detected	They have risen to the head of the UK's art rock ranks with an album of songs that are catchy, creative and original enough to sound fresh.
 Not Detected	"We are honoured to have won the live and exclusive broadcasting rights for The Academy Awards," said Sky Networks' Sophie Turner Laing.
 Not Detected	The film is also in the running for best original screenplay.
-Construct Detected	It 's got nothing related to what 's really going on .
+Construct Detected	It's got nothing related to what's really going on.
 Not Detected	As the world moves on people tend to look more and more into the past to things that make them feel safe.
 Not Detected	"We are deeply concerned that the New Year will spell misery for huge numbers of garment workers.
 Not Detected	It is expecting annual sales growth of between 1% and 3% for the month.
@@ -913,7 +913,7 @@ Not Detected	The Japanese government has forecast that the country's economic gr
 Not Detected	The Ambani family controls 48% of the group, which is worth $17bn (£9.1bn; 745bn Indian rupees).
 Not Detected	"Basically I was invited here by Thailand.
 Not Detected	The club appointed an auditor, who has recommended a number of steps, including deferring the rent due on the stadium and suspending debt repayments until at least the 2006-2007 fiscal year.
-Construct Detected	People do n't feel like that 's anything related to us .
+Construct Detected	People don't feel like that's anything related to us.
 Not Detected	Speaking to the House Budget Committee he urged Congress to take action to cut the deficit, such as increasing taxes.
 Not Detected	Doing so would remove the exposure to the weak US dollar, which is making Saabs more expensive to US consumers.
 Not Detected	but you'll have a fun night with the film and all the extras.

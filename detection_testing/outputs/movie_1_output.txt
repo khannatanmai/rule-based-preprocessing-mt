@@ -163,7 +163,7 @@ Not Detected	Praised for your discretion...
 Not Detected	I mean really shagging her, I mean it was crazy, I was like a huge mechanical piston, in and out, IN and OUT!--
 Not Detected	You don't want the extra police pay?
 Not Detected	You see, they going to make a movie about me, too, Eddie.
-Construct Detected	he 's got nothing related to this ...
+Construct Detected	he's got nothing related to this...
 Not Detected	Is that a good sign, Doctor?
 Not Detected	, we needs a name for this joint.
 Not Detected	Even if it takes a big fight.
@@ -209,7 +209,7 @@ Not Detected	Looks like you company can write off its share of this colony.
 Not Detected	Herr Mozart, what brings you here?
 Not Detected	Oh God, what did you say, you dumb bitch?
 Not Detected	Everybody just talk out loud.
-Construct Detected	They caused me to get naked .
+Construct Detected	They caused me to get naked.
 Not Detected	Why don't we take a trip together?
 Not Detected	Here's twenty-five thousand.
 Not Detected	No I don't want to go to school here tomorrow.
@@ -424,7 +424,7 @@ Not Detected	How long have you been playing, Fraulein?
 Not Detected	But I'm a firm believer in doing something for your own reasons, not someone else ' s .
 Not Detected	We're just about to start cutting in.
 Not Detected	The Slaughtered Lamb?
-Construct Detected	You wanna be a big deal , right ?
+Construct Detected	You wanna be a big deal, right ?
 Not Detected	I don't like to assert myself, Dave, but it would be much better now for you to rest.
 Not Detected	Cole, I don't want you to give up on her.
 Not Detected	Umm, that also has already happened.
@@ -678,7 +678,7 @@ Not Detected	This is bad public relations.
 Not Detected	That's illegal, you know.
 Not Detected	My need to engage in homicidal behavior on a massive scale cannot be, um, corrected, but I have no other way to fulfill my needs.
 Not Detected	Here's this guy with a pen stuck in his ass
-Construct Detected	I think I 'm right in saying that , right , Court Composer ?
+Construct Detected	I think I'm right in saying that, right , Court Composer?
 Not Detected	Of course I'm happy for you.
 Not Detected	Half of the water has gone, the rest is nearly putrid!
 Not Detected	sometimes you just gotta punch somebody out, y'know?
@@ -828,7 +828,7 @@ Not Detected	Nobody cares, Ronald.
 Not Detected	He'll roast like a pig on a spit.
 Not Detected	I had forgotten it, till you showed me her picture.
 Not Detected	Now don't you worry about it.
-Construct Detected	You and your brother , fighting fires together , helluva image , right ?
+Construct Detected	You and your brother, fighting fires together, helluva image, right ?
 Not Detected	What happened up there?
 Not Detected	Do you understand that you have sinned?
 Not Detected	I'll get off work or something.
@@ -873,7 +873,7 @@ Not Detected	You wake up every night,
 Not Detected	over a hundred at least.
 Not Detected	Todd doesn't know either.
 Not Detected	And what's more, keep up the good work and who knows -
-Construct Detected	It looks pretty hopeless , right ?
+Construct Detected	It looks pretty hopeless, right ?
 Not Detected	Maybe these photographs are the last piece of that puzzle.
 Not Detected	So now I see where you're coming from.
 Not Detected	Guy like Evan Twombley, Boston union official, probably got lots of people want to see him dead.
@@ -897,7 +897,7 @@ Not Detected	What does everybody else think about this?
 Not Detected	She had the electric heater.
 Not Detected	Someone who's up for the job.
 Not Detected	Don't you think it kind of defeats the purpose?
-Construct Detected	Hey , sorry if I caused you to look bad in front of your boss .
+Construct Detected	Hey, sorry if I caused you to look bad in front of your boss.
 Not Detected	Those boys are buying up the mountain, Wade.
 Not Detected	And then I'm up for an ad for Queen Harry next week.
 Not Detected	Too bad, man, that blows my chance to be Ambassador to France.
@@ -917,7 +917,7 @@ Not Detected	Please, tell us about your childhood.
 Not Detected	Just because we ain't rapping about Gucci, Timberland, Rolex, Benz, Cristal, ho's and bitches, we're pseudo.
 Not Detected	Give me the Goddamn keys!
 Not Detected	Take off the bracelets or no deal.
-Not Detected	Dino made her eat a bunch of pills, we laid out the plastic, put film in the camera and Machine
+Construct Detected	Dino caused her to eat a bunch of pills, we laid out the plastic, put film in the camera and Machine
 Not Detected	I'm telling you it's not that.
 Not Detected	Austin, we don't look anything like our photo badges.
 Not Detected	"Bank officials estimate the loss at fifty thousand dollars."

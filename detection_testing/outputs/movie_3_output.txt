@@ -291,7 +291,7 @@ Not Detected	I'll lead you around.
 Not Detected	Meanwhile I'm not here anymore.
 Not Detected	"Losers," who played games of chance.
 Not Detected	but there's more than your feelings at stake here.
-Construct Detected	Not such a menace now , right , Pinkerton ?
+Construct Detected	Not such a menace now, right , Pinkerton?
 Not Detected	You want me to fall to my knees and start crying like a baby... ?
 Not Detected	Otherwise known as an orgy?
 Not Detected	I hope he was a baddy.
@@ -524,7 +524,7 @@ Not Detected	If you had an American Express card she'd give you a blowjob.
 Not Detected	Turns out your wife makes a hell of an outlaw.
 Not Detected	He's too important, James.
 Not Detected	We kill detectives, they can replace 'em in a day.
-Construct Detected	You do n't want to hurt those boys , right ?
+Construct Detected	You don't want to hurt those boys, right ?
 Not Detected	I requested they come here, and save her ladyship and yourself the inconvenience of the trip to London, but they declined, saying that they did not wish to incur the risk of a visit to Castle Hackton to negotiate, as they were aware of how other respectable parties, such as Messrs. Sharp and Salomon had been treated here.
 Not Detected	Papa, the rule is you can only give penalties that can be performed in the room.
 Not Detected	Now, if you'll excuse me.
@@ -607,7 +607,7 @@ Not Detected	For christ's sake, you were seven years old!
 Not Detected	I'm so sorry, honey...
 Not Detected	Steed asked me to play a hunch:  Valentine Peel.
 Not Detected	That Negroes have no sense of time - time except when it comes to music or dance.
-Construct Detected	You do n't read , right ?
+Construct Detected	You don't read, right ?
 Not Detected	Only talent interests a woman of taste.
 Not Detected	We'd like to ask you about a business associate of your, Warren Hubley.
 Not Detected	No, no, don't talk to Immigration!
@@ -624,14 +624,14 @@ Not Detected	No, Lt., I don't have a problem with drilling.
 Not Detected	it's the right thing to do.
 Not Detected	Stephen, you gotta stop just showing up on the roof like this.
 Not Detected	We rented a loft in Sunnyvale.
-Construct Detected	If she ca n't pay , I 'll have to foreclose , right ?
+Construct Detected	If she can't pay, I'll have to foreclose, right ?
 Not Detected	I don't want to live anymore.
 Not Detected	Tell 'em to verify every signature.
 Not Detected	Even with the politics taken out, this thing would still remain a vulgar farce.
 Not Detected	What's the point in having a speech if I have to ad-lib?
 Not Detected	Sometimes I feel like I'm living with Melicertes.
 Not Detected	Girls, why don't we go inside for lunch.
-Construct Detected	I had a sip of sake and suddenly , I do n't know what happened .
+Construct Detected	I had a sip of sake and suddenly, I don't know what happened.
 Not Detected	Say, do you always work people over like
 Not Detected	He'd wake us in the middle of the night.
 Not Detected	I want to speak with you.
@@ -646,7 +646,7 @@ Not Detected	But it wasn't dead...
 Not Detected	The Huxtable's, Cosby, revolutionary.
 Not Detected	You'll be dead and you'll leave me alone.
 Not Detected	Look at it, it's been rendered useless.
-Construct Detected	You stupid dumbshit , you never know when to fucking quit , right ?
+Construct Detected	You stupid dumbshit, you never know when to fucking quit, right ?
 Not Detected	Take them out and get them changed.
 Not Detected	Some stupid kid got panicky, takes the safety off
 Not Detected	Oh, so now you think you know me?
@@ -760,7 +760,7 @@ Not Detected	I don't know if luck's the word.
 Not Detected	Manray, Sloan says you're too talented to be dancing on the street.
 Not Detected	"There is no second place." Plus every time I get jammed-up, Gary has an inspiration.
 Not Detected	Why don't you just quit?
-Construct Detected	I take it this is something related to the trouble they 're having up at Clavius ?
+Construct Detected	I take it this is something related to the trouble they're having up at Clavius?
 Not Detected	Major Dallas, if our calculations are correct you still have 57 hours owed to the Federal Army on your enlistment which is more than you will need for a mission of the utmost importance.
 Not Detected	This is the biggest Beta demo in like the history of software.
 Not Detected	Bud, get wise to the political realities.
@@ -845,7 +845,7 @@ Not Detected	Pretty groovy Jumbo Jet, eh?
 Not Detected	No Finlandia, as usual.
 Not Detected	Long day-a bit scattered.
 Not Detected	I know I split, and I know how you felt...
-Construct Detected	The truth hurts , right , buddy ?
+Construct Detected	The truth hurts, right , buddy?
 Not Detected	You try going through what we did.
 Not Detected	Twombley sure as hell won't be shooting it again.
 Not Detected	He didn't recognize me.
@@ -951,7 +951,7 @@ Not Detected	I like my horizons narrow.
 Not Detected	I was working out what this trip must cost, taking him up there by himself and coming back empty.
 Not Detected	Shit, if Kristin had to get married where I could afford it, we'd be holding the reception at Buddy's Burgers.
 Not Detected	Just for a few minutes.
-Construct Detected	That 'll be a test , right ?
+Construct Detected	That'll be a test, right ?
 Not Detected	Harry and I and everyone
 Not Detected	What the fuck do you know about love?
 Not Detected	If I may make some suggestions...
@@ -991,10 +991,10 @@ Not Detected	We're revolting against the powers that be, that been enslaving the
 Not Detected	You'd outrank everyone.
 Not Detected	There is a name, a term for your kind, the likes of you.
 Not Detected	Have you checked out the tax bill on your father's farm lately?
-Construct Detected	You 'll stand by me , right , Mr. Dickson ?
+Construct Detected	You'll stand by me, right , Mr. Dickson?
 Not Detected	I have waited too long, fought too hard.
 Not Detected	After you -- Mrs. Peel ...
 Not Detected	Lying would've been worse.
 Not Detected	White turns to black.
-Construct Detected	You think I 'm dumb , right ?
+Construct Detected	You think I'm dumb, right ?
 Not Detected	You just feel sorry for me.

@@ -98,7 +98,7 @@ Not Detected	That's not really a very proper question.
 Not Detected	Would either of you like another cup of coffee?
 Not Detected	No, it's been too long.
 Not Detected	What's wrong with that kind of banking?
-Construct Detected	You do n't think God'll mind , right ?
+Construct Detected	You don't think God'll mind, right ?
 Not Detected	Well of course in Italy we know nothing about that.
 Not Detected	We'll talk about that.
 Not Detected	I have acted as I think fit.
@@ -227,7 +227,7 @@ Not Detected	'Bout written you off.
 Not Detected	I also thought of that bread, Father.
 Not Detected	I'm not asking you to swear to anything.
 Not Detected	Trying to figure out what possessed me.
-Construct Detected	no , I caused him to sleep on the couch .
+Construct Detected	no, I caused him to sleep on the couch.
 Not Detected	I am Harry James' son, and will act as becomes my name and quality.
 Not Detected	I'll tell you when we get there.
 Not Detected	Protects the ozone layer.
@@ -292,7 +292,7 @@ Not Detected	Well, that's too bad.
 Not Detected	I thought I was coming here for a job.
 Not Detected	Do me an enormous favor?
 Not Detected	And when are you going to realize, Ted, that your mental hygiene is the most important thing right now.
-Construct Detected	The phone caused me to do it !
+Construct Detected	The phone caused me to do it!
 Not Detected	Yeah, I do, but go to work.
 Not Detected	How did you start the fire this time?
 Not Detected	I'm talking about now.
@@ -302,7 +302,7 @@ Not Detected	They've been coming in steady all morning.
 Not Detected	What are you talkin' about?
 Not Detected	I wrote forty operas alone.
 Not Detected	I must see you tonight!
-Construct Detected	You did grow out of that , right ?
+Construct Detected	You did grow out of that, right ?
 Not Detected	Mostly regional stuff, but he's rumored to have a big tube sock ad coming out.
 Not Detected	It's really fan mail.
 Not Detected	Not yet, but this thing will never get made.
@@ -419,7 +419,7 @@ Not Detected	A down payment now, then a bonus for sleeping with me?
 Not Detected	You are completely unfair.
 Not Detected	Do you see the maintenance panel?
 Not Detected	But, I can't go to the police...
-Construct Detected	Brown did n't have anything related to it .
+Construct Detected	Brown didn't have anything related to it.
 Not Detected	Don't give me that fucking shit.
 Not Detected	Tell me about your dad!
 Not Detected	Absolutely, I'm 100% with you.
@@ -456,7 +456,7 @@ Not Detected	, I'm mommy, I'm a Czech girl.
 Not Detected	He was an interesting guy.
 Not Detected	He's gonna hurt you, Debbie.
 Not Detected	Can't you talk to him?
-Construct Detected	Move that car , right ?
+Construct Detected	Move that car, right ?
 Not Detected	Expressing my opinion is not a terrorist action.
 Not Detected	You getting scared because some people don't like what you are doing?
 Not Detected	When Ethel passed away, I was lost.
@@ -501,7 +501,7 @@ Not Detected	Oh my son, my poor son!
 Not Detected	How can I help you, Mrs. Peel?
 Not Detected	Let me reassure you Father..
 Not Detected	It's nice to do favors for people you do business with.
-Construct Detected	Well , I 'm sure glad that 's settled , right ?
+Construct Detected	Well, I'm sure glad that's settled, right ?
 Not Detected	You need this for anything?
 Not Detected	Faith, I think you are a lad that's likely to keep your word.
 Not Detected	Patrick, what's wrong?
@@ -591,7 +591,7 @@ Not Detected	Jesus, Sykes -- it's been less than ten hours.
 Not Detected	You were a hostage to everyone else
 Not Detected	People remember me from the news.
 Not Detected	I thought she was alright.
-Construct Detected	You will let me know if you find that queen who 's in need of protection , right ?
+Construct Detected	You will let me know if you find that queen who's in need of protection, right ?
 Not Detected	They've even got a porno Academy Awards.
 Not Detected	Stop by our spread after that, tell our Ma we're all right.
 Not Detected	Steed, we really must be --
@@ -624,7 +624,7 @@ Not Detected	I have heard of them.
 Not Detected	Do you always live like this?
 Not Detected	I promised him to Machine.
 Not Detected	The case was closed and now they've 'misplaced' the file.
-Construct Detected	Try Joshua Strader , right , darlin ' ?
+Construct Detected	Try Joshua Strader, right , darlin'?
 Not Detected	And then we're going to back empty.
 Not Detected	Thank you for calling the white House...
 Not Detected	Let him stay up here.
@@ -659,7 +659,7 @@ Not Detected	It was not an accident.
 Not Detected	This'll show you how smart I am.
 Not Detected	Who are you revolting against?
 Not Detected	You must be very cautious with regard to the company you should meet in Dublin, where rogues and adventurers of all countries abound.
-Construct Detected	Mister O'Higgins , I am thinking if I know your good father ?
+Construct Detected	Mister O'Higgins, I am thinking if I know your good father?
 Not Detected	You learned 900 languages in five minutes?!
 Not Detected	You have to find them, Utapan.
 Not Detected	And if you could try and pin down where you were the night of Owen's disappearance, it would make my job a lot easier.
@@ -679,7 +679,7 @@ Not Detected	But imagine the things he'd say during sex.
 Not Detected	Completely out of control.
 Not Detected	Dear Mozart, my sincere congratulations.
 Not Detected	Let's get the fuck out of here!
-Construct Detected	You 're not scared , right ?
+Construct Detected	You're not scared, right ?
 Not Detected	No matter what, no matter how angry it makes me, no matter how much it hurts.
 Not Detected	Did you see that..thing..swallow our battleship like a gum drop?
 Not Detected	Wear something fabulous.
@@ -769,7 +769,7 @@ Not Detected	Looks like it stung him.
 Not Detected	Don't bring the Police.
 Not Detected	Do you mean to say you've waited all these years because you couldn't create a chip on your own?
 Not Detected	I ain't gonna beg for my life.
-Construct Detected	You 're not a big talker , right ?
+Construct Detected	You're not a big talker, right ?
 Not Detected	When I'm hoofing, I mean really doing my thing, hitting it
 Not Detected	this guy and make us all look good.
 Not Detected	Not so soon, my dear, as you may fancy perhaps.
@@ -831,7 +831,7 @@ Not Detected	I can't make myself any clearer
 Not Detected	Eggshell with Romalian type.
 Not Detected	No, I'm not playing this game.
 Not Detected	Nurse Hobbs said there's a disturbance in Leicester Square involving some sort of mad dog.
-Construct Detected	Solid little jobs , right ?
+Construct Detected	Solid little jobs, right ?
 Not Detected	Tonic and dominant, tonic and dominant, from here to Resurrection!
 Not Detected	Ted, you must remember what the doctor said, the first step on the road to sanity is admitting that you're sick.
 Not Detected	But, listen, suppose I stay a crook?
@@ -887,7 +887,7 @@ Not Detected	So now the Confutatis.
 Not Detected	oh, you know, maybe a Saturday?
 Not Detected	No don't tip the owner of the salon.
 Not Detected	Yeah, that's easy for you to do.
-Construct Detected	Well , you liked it , right ?
+Construct Detected	Well, you liked it, right ?
 Not Detected	What's with her costume?
 Not Detected	No, you're travelling together.
 Not Detected	He gets so excited when new people are here.
@@ -902,11 +902,11 @@ Not Detected	Real amazin' how far a gun and a badge can carry some cats...
 Not Detected	A gal who doesn't think happiness ends with primates.
 Not Detected	you pawnbrokers - take a look at this!
 Not Detected	He's been altering the coordinates since we logged on.
-Not Detected	You were partners with him on some Slag -- uh, Newcomer real estate thing.
+Construct Detected	You and him were partners on some Slag -- uh, Newcomer real estate thing.
 Not Detected	Do you have any hot soup?
 Not Detected	Good morning, Fraulein Schlumberg.
 Not Detected	I've lost number three.
-Construct Detected	Oh , I did have a date with you tonight , right ?
+Construct Detected	Oh, I did have a date with you tonight, right ?
 Not Detected	We could cross-reference a data base on media ownership.
 Not Detected	and I can't go, because you won ' t.
 Not Detected	Decontamination is almost complete.
