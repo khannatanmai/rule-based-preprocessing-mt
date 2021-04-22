@@ -94,7 +94,10 @@ input_lines = open(input_file_path).readlines()
 count_input_line = 0
 total_lines = len(input_lines)
 
+
 for line in input_lines:
+	construction_detected_in_line = False
+
 	text = line.strip()
 	count_input_line += 1
 	print_to_stderr(str(count_input_line*100/total_lines) + "% Done")
@@ -255,10 +258,12 @@ for line in input_lines:
 			output_sentence.append(input_buffer.get())
 
 		if(detection_flag):
-			text = "Detected\t" + " ".join(output_sentence)
-		else:
-			text = "Not Detected\t" + text
+			text = " ".join(output_sentence)
+			construction_detected_in_line = True
 
 	#Output after applying all rules
-	print(text)
+	if(construction_detected_in_line):
+		print("Construct Detected\t" + text)
+	else:
+		print("Not Detected\t" + text)
 
