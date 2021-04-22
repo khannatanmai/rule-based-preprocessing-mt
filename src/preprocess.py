@@ -281,11 +281,11 @@ for line in input_lines:
 			text = "".join(output_parts)
 			construction_detected_in_line = True
 
-	#if(construction_detected_in_line):
-	#	print("Construct Detected\t" + text)
-	#else:
-	#	print("Not Detected\t" + text)
+	if(construction_detected_in_line):
+		print("Construct Detected\t" + text)
+	else:
+		print("Not Detected\t" + text)
 
 	#Output after applying all rules
-	print(text)
+	#print(text)
 
