@@ -1,0 +1,180 @@
+Construct Detected	The vice president should not hesitate to get involved
+Not Detected	
+Not Detected	She dislikes the lazy
+Not Detected	She is very fond of the diligent
+Not Detected	Her dislike of the insincere runs very deep
+Not Detected	
+Construct Detected	He caused John to fix the car .
+Construct Detected	She caused her students to take the test again .
+Not Detected	
+Not Detected	As a director his work embraces the narrative traditions of French cinema.
+Not Detected	As students, they felt their voice wasn't being heard.
+Not Detected	
+Not Detected	We will build as large a tank as is possible.
+Not Detected	We will have as long a debate as we can on this issue.
+Not Detected	So dismissive a judgement requires further explanation.
+Not Detected	Perception is as precious of a commodity for sports as reality.
+Not Detected	It's not that big of a deal anymore.
+Not Detected	Russia is too powerful of a country to be treated lightly.
+Not Detected	
+Construct Detected	I and my classmates are still friends
+Construct Detected	Sally and her are good friends , right ?
+Not Detected	
+Not Detected	I suppose that's as good as a reason as any to stay silent.
+Not Detected	Now seems as good a time as any to switch careers.
+Not Detected	Today is as fortunate a date as any to get married on
+Not Detected	
+Construct Detected	I am thinking if they will win tomorrow
+Construct Detected	I am thinking if I will clear the interview
+Not Detected	
+Not Detected	You can visit the very picturesque Indian Rock Park.
+Not Detected	I was recalling the Paris of my youth.
+Not Detected	
+Not Detected	So badly was he affected that he had to be taught to speak again.
+Not Detected	Only in this way can any future generations gain a balanced view of society.
+Not Detected	Only if we help shall they be saved.
+Not Detected	Only rarely were women paid as much as men for the same work.
+Not Detected	Only on weekends was I happy.
+Not Detected	Only then should you consider your opening remarks.
+Not Detected	
+Construct Detected	He wo n't eat chicken teriyaki , leave raw sea urchin .
+Construct Detected	It will be difficult enough for an individual to be consistent , leave a society .
+Construct Detected	It 's unsurprising that such an attitude failed to produce competent screenwriters , leave exciting ones .
+Construct Detected	Even the spectators were dissatisfied with the verdict , leave the victim .
+Not Detected	
+Construct Detected	Gardeners , some of whom had seen much of their life 's work destroyed in front of their own eyes , refused to be beaten by an aberration of nature .
+Not Detected	
+Construct Detected	There are a lot of restaurants in Delhi
+Construct Detected	Great visuals , great performances , great soundtrack , plus a lot of cameos .
+Construct Detected	There are a lot of bargains in our summer sale .
+Not Detected	
+Construct Detected	But some find it difficult to treat their grown - up children as people in themselves , entitled to plan their own lives .
+Construct Detected	He was a winner in himself .
+Construct Detected	She was wealthy in herself .
+Not Detected	
+Not Detected	Had it not been for human kindness he would have ended up unemployed.
+Not Detected	Were it a dog, they would be much less eager to eat its meat.
+Not Detected	Should these objectives not be realised we shall not hesitate to resign.
+Not Detected	Were it not for the wedding, he would have never met his future wife.
+Not Detected	
+Not Detected	Don't you let her know what you're up to, mind.
+Not Detected	Don't you dare move, boy!
+Not Detected	"Don't you use that word", she said.
+Not Detected	Don't you dare cry, I mumbled to myself.
+Not Detected	
+Not Detected	Boy, do they have a surprise coming their way.
+Not Detected	Isn't that terrible.
+Not Detected	Didn't I just know it!
+Not Detected	Don't I know it!
+Not Detected	
+Construct Detected	I hope you will turn vegan in Germany .
+Construct Detected	I hope we will find an inner peace and happiness which is beyond the price of money .
+Construct Detected	I hope she will rest in peace .
+Construct Detected	I hope you will be well and happy .
+Not Detected	
+Construct Detected	You are a student here , right ?
+Construct Detected	We are n't going with him , right ?
+Construct Detected	It ca n't be that frightening , right ?
+Construct Detected	He never learns , right ?
+Construct Detected	He need n't sit with us , right ?
+Not Detected	
+Construct Detected	Concerned for my health , right ?
+Construct Detected	A holiday in the sun , right ?
+Construct Detected	Do n't know her very well , right ?
+Not Detected	Vain of me, was it not?
+Not Detected	
+Not Detected	She whistled her way down the lane to the silo.
+Not Detected	He limped his way out of the room.
+Not Detected	The taxi nosed its way back into the traffic.
+Not Detected	A middle aged man eased his way into the staff room.
+Not Detected	She danced her way straight to the championship.
+Not Detected	
+Not Detected	One of the guards elbowed his way through the crowd to the stage.
+Not Detected	Rather than trying to bluff your way through the tournament, you should just spend some time and practice.
+Not Detected	The steam sometimes blasts its way up to the surface through the lava.
+Not Detected	He thought his way through these apparent obstacles.
+Not Detected	A piece of shrapnel had smashed its way through the windshield.
+Not Detected	There's a lady who's buying her way to heaven.
+Not Detected	
+Not Detected	She carefully made her way through the cluttered room.
+Not Detected	The protestors made their way through the maze of barricades set up by the police.
+Not Detected	The rest of us made our way to a farm where we were given tea and biscuits.
+Not Detected	My task was to make my way from the entrance to a vacant table.
+Not Detected	
+Construct Detected	It 's the one which has the actor who went to jail .
+Construct Detected	She 's the one which has the rich father and massive inheritance .
+Not Detected	
+Construct Detected	Just get a random dress from a cheaper store and finish the work , but none of them speak to me and how horrible
+Construct Detected	Why not just give each family the money and finish the work ?
+Construct Detected	Can I leave it at that today and finish the work ?
+Construct Detected	You basically just glue four sides together and finish the work .
+Construct Detected	I usually serve fresh vegetables and finish the work .
+Not Detected	
+Construct Detected	I 've had this bike for almost a year and suddenly the battery does n't want to stay charged .
+Construct Detected	Suddenly we noticed the whole atmosphere change .
+Construct Detected	Israelites where busy making their breakfast when suddenly there was a large rumble and a flash of light over the mountain .
+Construct Detected	Now suddenly , you are blaming Android 5.01
+Not Detected	
+Construct Detected	No matter how much I try , I ca nt resist that Nintendo magic .
+Construct Detected	No matter how much I try I keep putting on weight that I ca n't seem to shed .
+Construct Detected	No matter how much they try the Crusaders could not get their vessels close enough to land
+Construct Detected	No matter how much they try , it is difficult for hotels to be as resource efficient .
+Construct Detected	No matter how much you try , you 'll never be able to learn or understand everything .
+Not Detected	
+Construct Detected	Many times we do not know about what sort of programs are running in the background .
+Construct Detected	This ere of mystery has kept many person guessing , and contributed to the paintings fame .
+Construct Detected	Barcelona is notorious for pick - pockets and I ’ve seen many person losing all their most precious belongings including my own boss , who lost her passport .
+Construct Detected	I 've sat in many class with many woman just like Hillary Clinton .
+Construct Detected	We ’ve spent many hour during our Disney vacations strategizing about how to make sure we ’ll get to see all the rides .
+Construct Detected	My grandmother on many occasion has told me that my cousin is her favourite .
+Not Detected	
+Construct Detected	I would go back to the start with this one , check the variables to make sure it all jives
+Construct Detected	So this technically brings us back to the start : the audit log is modifiable by that person at least .
+Construct Detected	We now found ourselves back to the start .
+Not Detected	
+Construct Detected	The piece of advice that I think is inaccurate is saying that just building a great product is all it takes
+Construct Detected	I think unfortunately you are way inaccurate
+Construct Detected	these analogies are wildly inaccurate as a way to describe how gay marriage is viewed in society .
+Not Detected	
+Construct Detected	US forces in Iraq need to sort out their issues there and really dampen the situation and stop inflaming things by confrontational policies .
+Construct Detected	Hopefully , Congress will sort out their issues before then and do what is right for consumers .
+Construct Detected	If you do n't sort out your issues , you are going to be out of business in about three months .
+Construct Detected	I know I have to sort out my issues and have a plan for three well - balanced meals a day .
+Construct Detected	Hopefully the kid will sort out his issues .
+Not Detected	
+Construct Detected	It 's like they were trying to pretend to be stupid and act like I was enrolled .
+Construct Detected	Alpsta Do n't pretend to be stupid . Your previous comment was pretty condescending .
+Construct Detected	Otherwise it makes perfect sense that they pretend to be stupid for now .
+Not Detected	
+Not Detected	If you really want to blow your mind, calculate how many possible iterations of a chess game there are.
+Not Detected	This guy’s talent and technique blows my mind.
+Not Detected	You could also show this to your students so you can blow their mind about how heavily we rely on the internet.
+Not Detected	One of the features that blow our mind is that the case is running Android 6.1 out of the box.
+Not Detected	
+Not Detected	Not that women are more mercenary, or more unprincipled than men.
+Not Detected	Not that women necessarily have more stress than men, but it is a significant contributing factor.
+Construct Detected	Not that anorexia nervosa has anything related to an overdeveloped sense of vanity .
+Construct Detected	Not that drinking alcohol has anything related to enjoying its taste .
+Not Detected	
+Construct Detected	Not that anorexia nervosa has anything related to an overdeveloped sense of vanity .
+Construct Detected	Not that drinking alcohol has anything related to enjoying its taste .
+Not Detected	
+Construct Detected	He smiled , told me it was an old talk , and we remained very friendly for the rest of his career .
+Construct Detected	Past misunderstandings and grudges would be considered an old talk , and previous hurts and transgressions would be forgiven .
+Construct Detected	It 's all an old talk for the former couple who share today a mutual respect for one another .
+Construct Detected	I told her it 's an old talk and what 's done is done .
+Not Detected	
+Construct Detected	The meandering pathways have made it easy to evade police .
+Construct Detected	A Piscean will evade you before you even know they 're gone .
+Construct Detected	If anybody in this world can evade them , it ’ll be him .
+Construct Detected	He could n't evade me for much longer .
+Not Detected	
+Construct Detected	The enormous amount of photoshop done is a persistent problem for me .
+Construct Detected	The blood evidence is the biggest persistent problem for me ; that causes me the greatest problems .
+Construct Detected	A certain outrageously demonstrative Army Ranger has been a persistent problem for him since his last trip home .
+Construct Detected	It 's like a constant persistent problem for our , perpetually taunting us with unresponsiveness and slow apps .
+Construct Detected	Twitter 's trolling problem has been a persistent problem for it since almost the beginning .
+Not Detected	
+Construct Detected	Have you heard ? The old man down the street has died .
+Construct Detected	The old lady had lead a solitary life , but when she died , the whole neighbourhood came to her funeral .
+Construct Detected	He knew that he will be able to achieve everything on the list before he dies .
