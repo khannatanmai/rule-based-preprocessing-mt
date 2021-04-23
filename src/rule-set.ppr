@@ -1,10 +1,10 @@
 get [PRP$@1] act|acts together -> sort out [@1] issues
-give [NN|NNS|PRP|NNP@1] the slip -> evade [@1]
+give ([DT|PRP$@1]) [NN|NNS|PRP|NNP@2] the slip -> escape from [@1] [@2]
 water under the bridge -> an old talk
 to do with -> related to
 play dumb -> pretend to be stupid
 off the mark -> inaccurate
-back to square one -> back to the start
+back to square one -> back in the beginning
 All|all@1 of a|the sudden -> [@1:suddenly|All:Suddenly]
 call it a day -> finish the work
 , are|is|can|ca|wo|will|do|does|did|need|should|would|could (n't) [PRP] (not) ?|,@1 -> , right [@1]
@@ -15,11 +15,11 @@ the [JJ@1] [!NN|NNS@2] -#> [@1] people [@2] #Removed temporarily due to a lot of
 should feel free to jump in -> should not hesitate to get involved
 Feel|feel free to jump in -> don't hesitate to get involved
 The|the one with the [@1] -> the one which has the [@1]
-thorn in ([DT@1]) [PRP$|NN|NNS|NNP@2] ([POS]) side -> persistent problem for [@1] [@2|my:me|his:him|their:them|its:it]
+thorn in ([DT@1]) [PRP$|NN|NNS|NNP@2] ([POS]) side -> persistent problem for [@1] [@2|my:me|his:him|their:them|its:it|our:us]
 {kick@1} the bucket -> [@1:die|kick:die|kicks:dies|kicked:died|kicking:dying]
 Try|try@1 as ([DT|PRP$@2]) [NN|NNS|PRP|NNP@3] might -> [@1:no|Try:No] matter how much [@2] [@3] try
 [NN|NNS|PRP|NNP@2] {make@3} ([DT|PRP$@4]) [NN|NNS|PRP|NNP@5] [VB@6] -> [@2] [@3:cause|made:caused|makes:causes|making:causing] [@4] [@5] to [@6]
-[NN|NNS|PRP|NNP@2] (used) (to) {be@3} ([RB@4]) ([JJ@5]) [NNS@6] with ([DT|PRP$@7]) [NN|NNS|PRP|NNP@8] -> [@2] and [@7] [@8] [@3:are|was:were|were:were] [@4] [@5] [@6]
+[NN|NNS|PRP|NNP@1] (used@2) (to@3) {be@4} ([RB@5]) ([JJ@6]) [NNS@7] with ([DT|PRP$@8]) [NN|NNS|PRP|NNP@9] -> [@1] and [@8] [@9|him:he|her:she|them:they|me:I|us:we] [@2] [@3] [@4|am:are|'m:are|is:are|was:were|were:were] [@5] [@6] [@7]
 I {wonder@1} -> I [@1:am|wondered:was] thinking
 in [PRP$@1] own right  -> in [@1:themselves|my:myself|his:himself|her:herself|its:itself]
 What|what 's ([DT|PRP$@1]) [NN|NNS|PRP|NNP@2] doing [IN|VBG@3] -> Why is [@1] [@2] [@3]
