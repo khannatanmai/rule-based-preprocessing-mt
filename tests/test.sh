@@ -84,18 +84,7 @@ echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-echo "Test 6: NOT Operator"
-
-echo "She dislikes the lazy employees and will fix this department." > input_text.txt
-rule_file="eng-hin.ppr"
-expected_output="She dislikes the lazy employees and will fix this department."
-
-python3 ../src/preprocess.py "rulesets/$rule_file" input_text.txt > temp_output.txt
-echo $expected_output > check_output.txt
-
-Compare_Outputs check_output.txt temp_output.txt
-
-echo "Test 7: Match Any Token Operator"
+echo "Test 6: Match Any Token Operator"
 
 echo "It's the one with the actor who went to jail." > input_text.txt
 rule_file="eng-hin.ppr"
@@ -106,7 +95,7 @@ echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-echo "Test 8: Mappings in Replacement Rules"
+echo "Test 7: Mappings in Replacement Rules"
 
 echo "This pandemic is a thorn in his side." > input_text.txt
 rule_file="eng-hin.ppr"
@@ -144,7 +133,7 @@ echo $expected_output > check_output.txt
 
 Compare_Outputs check_output.txt temp_output.txt
 
-echo "Test 9: Lemma matching"
+echo "Test 8: Lemma matching"
 
 echo "I will find this poster before I kick the bucket." > input_text.txt
 rule_file="eng-hin.ppr"
