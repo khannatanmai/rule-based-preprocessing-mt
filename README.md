@@ -2,14 +2,15 @@
 
 ## How to Use
 - Install dependencies using `pip install -r requirements.txt`
+- Download spacy model using `python -m spacy download en_core_web_sm`
 - `python3 src/preprocess.py [rule_file.ppr] [input_file.txt]`
 - Test using `./tests/test.sh`
 
-## External tools used
-- spacy POS tagger
-- Download model using `python -m spacy download en_core_web_sm`
+Note: This assumes your input is already sentence tokenised. If it's not, you can use the `spacy` sentence tokeniser first.
 
 ## Rule formalism (File extension .ppr)
+
+## **Sample rule file: `tests/rulesets/eng-hin.ppr`**
 
 ### Source side rules
 - `[...]` : POS Tags
@@ -32,3 +33,11 @@ For example, if you want a rule that matches "the" followed by an Adjective, whi
 - Anything not in `[...]` is matched directly
 - Rules are put in a list and applied on the input sentence one after the other.
 - Only lines with `->` in the rule-set are counted as rules.
+
+## Testing
+- Run tests using `tests/test.sh`
+
+## Miscellaneous Information
+This project is part of my Master's thesis in Computational Linguistics titled: **Rule-based pre-processing of idioms and non-compositional constructions to simplify them and improve black-box machine translation**
+
+You can open an issue on this repo to report any bugs or just to ask a doubt.

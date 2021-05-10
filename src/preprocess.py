@@ -83,7 +83,7 @@ for line in rule_lines:
 
 	patterns_and_replacements.append((detection_pattern, rule[1].strip().split(" ")))
 
-nlp = spacy.load("en_core_web_sm", disable=["parser", "ner", "attribute_ruler"])
+nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 
 input_lines = open(input_file_path).readlines()
 
@@ -281,11 +281,11 @@ for line in input_lines:
 			text = "".join(output_parts)
 			construction_detected_in_line = True
 
-	if(construction_detected_in_line):
-		print("Construct Detected\t" + text)
-	else:
-		print("Not Detected\t" + text)
+	#if(construction_detected_in_line):
+	#	print("Construct Detected\t" + text)
+	#else:
+	#	print("Not Detected\t" + text)
 
 	#Output after applying all rules
-	#print(text)
+	print(text)
 
