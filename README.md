@@ -1,5 +1,8 @@
 # Rule-based pre-processing of non-compositional constructions to simplify them and improve black-box machine translation
 
+## Purpose
+This rule-based pre-processor is used to detect non-compositional constructions in text using rules and pre-process them into more compositional but still equivalent constructions such that the machine translation of the input text improves significantly.
+
 ## How to Use
 - Install dependencies using `pip install -r requirements.txt`
 - Download spacy model using `python -m spacy download en_core_web_sm`
