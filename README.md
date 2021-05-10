@@ -41,6 +41,6 @@ For example, if you want a rule that matches "the" followed by an Adjective, whi
 - Run tests using `tests/test.sh`
 
 ## Miscellaneous Information
-This project is part of my Master's thesis in Computational Linguistics titled: **Rule-based pre-processing of idioms and non-compositional constructions to simplify them and improve black-box machine translation**
+This project is part of my Master's thesis in Computational Linguistics at IIIT Hyderabad titled: **Rule-based pre-processing of idioms and non-compositional constructions to simplify them and improve black-box machine translation**, done under the guidance of my advisor Dr. Dipti Sharma.
 
 You can open an issue on this repo to report any bugs or just to ask a doubt.
